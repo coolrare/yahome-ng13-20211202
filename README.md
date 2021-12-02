@@ -3,6 +3,10 @@
 - https://www.typescriptlang.org/
 - [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/)
 
+# 認識 ESModule - JavaScript 的模組化管理機制
+
+- https://pjchender.dev/javascript/js-es-module/
+
 # 常用熱鍵表
 
 - 下載 PDF 檔
