@@ -101,8 +101,23 @@
           <div class="widget-content">
             <div id="searchbox">
               <!-- <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup)="inputKeyup($event)"> -->
-              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()">
+
+              <!-- (input)="keyword = $any($event.target).value" -->
+              <!-- <input
+                (input)="keywordInput($event)"
+                [value]="keyword"
+                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()"> -->
+
+              <!-- <input
+                [ngModel]="keyword"
+                (ngModelChange)="keyword = $event"
+                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()"> -->
+
+              <input
+                [(ngModel)]="keyword"
+                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()">
               <input type="button" value="搜尋" id="searchbutton" (click)="search($event)">
+              {{ keyword }}
             </div>
           </div>
         </div>

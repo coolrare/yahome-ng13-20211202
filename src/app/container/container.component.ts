@@ -6,11 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
+  keyword = 'test';
+
+  // 示範 getter / setter
+  // _key = '';
+
+  // get key() {
+  //   return this._key;
+  // }
+
+  // set key(value: string){
+  //   this._key = value;
+  // }
+
   constructor() {}
 
   ngOnInit(): void {}
 
   search(event: MouseEvent) {
+    this.keyword += '!';
     console.log(event.ctrlKey);
   }
 
@@ -22,5 +36,9 @@ export class ContainerComponent implements OnInit {
 
   inputKeyupEnter(){
     console.log('search (keyup.enter)');
+  }
+
+  keywordInput(event: Event) {
+    this.keyword = (event.target! as HTMLInputElement).value
   }
 }
