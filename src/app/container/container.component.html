@@ -114,9 +114,13 @@
                 type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()"> -->
 
               <input
+                #tKeyword
                 [(ngModel)]="keyword"
-                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()">
-              <input type="button" value="搜尋" id="searchbutton" (click)="search($event)">
+                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
+                (keyup.enter)="inputKeyupEnter()">
+              <input type="button" value="搜尋" id="searchbutton"
+                (click)="test(tKeyword)"
+                (click)="search($event)">
               {{ keyword }}
             </div>
           </div>

@@ -41,4 +41,8 @@ export class ContainerComponent implements OnInit {
   keywordInput(event: Event) {
     this.keyword = (event.target! as HTMLInputElement).value
   }
+
+  test(input: any){
+    console.log(input);
+  }
 }
