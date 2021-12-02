@@ -4,8 +4,39 @@
     <section class="col-md-8 content-wrapper">
       <div id="ctl00_cphBody_divError"></div>
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
-
+        <div [ngSwitch]="num">
+          <div *ngSwitchCase="1">1</div>
+          <div *ngSwitchCase="2">2</div>
+          <div *ngSwitchCase="3">3</div>
+          <div *ngSwitchDefault>Default</div>
+        </div>
         <!-- Article START-->
+        <article class="post" id="post0" *ngFor="let item of articles">
+          <header class="post-header">
+            <h2 class="post-title">
+              <a [href]="item.href">
+                {{ item.title }}
+              </a>
+            </h2>
+            <div class="post-info clearfix">
+              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>2016/04/30 18:05</span>
+              <span class="post-author"><i class="glyphicon glyphicon-user"></i><a
+                  href="http://blog.miniasp.com/author/will.aspx">Will 保哥</a></span>
+              <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a
+                  href="http://blog.miniasp.com/category/Visual-Studio.aspx">Visual Studio</a></span>
+            </div>
+          </header>
+          <section class="post-body text">
+            <div [innerHTML]="item.summary">
+            </div>
+            <div>
+              ... <a class="more"
+                href="http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx#continue">繼續閱讀</a>
+              ...
+            </div>
+          </section>
+        </article>
+        <!--
         <article class="post" id="post0">
           <header class="post-header">
             <h2 class="post-title">
@@ -85,7 +116,7 @@
                 href="http://blog.miniasp.com/post/2016/03/14/ASPNET-MVC-Developer-Note-Part-28-Understanding-ModelState.aspx#continue">繼續閱讀</a>
               ...</p>
           </section>
-        </article>
+        </article> -->
         <!-- Article END-->
 
       </div>
@@ -113,14 +144,9 @@
                 (ngModelChange)="keyword = $event"
                 type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" (keyup.enter)="inputKeyupEnter()"> -->
 
-              <input
-                #tKeyword
-                [(ngModel)]="keyword"
-                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
+              <input #tKeyword [(ngModel)]="keyword" type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
                 (keyup.enter)="inputKeyupEnter()">
-              <input type="button" value="搜尋" id="searchbutton"
-                (click)="test(tKeyword)"
-                (click)="search($event)">
+              <input type="button" value="搜尋" id="searchbutton" (click)="test(tKeyword)" (click)="search($event)">
               {{ keyword }}
             </div>
           </div>

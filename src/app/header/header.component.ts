@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   isHighlight = false;
   fontSize = 24;
+  displayIcons = true;
 
   constructor() { }
 
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
   toggleHighlight() {
     this.isHighlight = !this.isHighlight;
     this.fontSize += 2;
+    this.displayIcons = !this.displayIcons;
   }
 
 }

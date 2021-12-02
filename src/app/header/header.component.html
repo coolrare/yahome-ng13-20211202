@@ -37,7 +37,9 @@
           <h3 [class.highlight]="isHighlight">{{ subTitle }}</h3>
         </div>
 
-        <div id="social-icons" class="pull-right social-icon">
+        <!-- <div [style.display]="displayIcons ? 'block': 'none'"></div> -->
+        <div *ngIf="displayIcons"
+          id="social-icons" class="pull-right social-icon">
           <a href="https://www.facebook.com/will.fans" [title]="fbTitle" target="_blank">
             <img src="/assets/images/facebook.png">
           </a>
