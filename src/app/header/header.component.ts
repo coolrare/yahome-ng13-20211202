@@ -11,9 +11,17 @@ export class HeaderComponent implements OnInit {
   link = 'https://google.com/';
   fbTitle = 'Will 保哥的技術交流中心';
 
+  isHighlight = false;
+  fontSize = 24;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleHighlight() {
+    this.isHighlight = !this.isHighlight;
+    this.fontSize += 2;
   }
 
 }

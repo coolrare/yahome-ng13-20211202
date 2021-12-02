@@ -25,11 +25,16 @@
     <div class="title-wrapper">
       <div class="container">
 
-        <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
+        <img
+          (click)="toggleHighlight()"
+          src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
 
         <div class="pull-left">
-          <h1><a [href]="link" [attr.data-abc]="title">{{ title }}</a></h1>
-          <h3>{{ subTitle }}</h3>
+          <h1 [style.font-size.px]="fontSize"><a [href]="link" [attr.data-abc]="title">{{ title }}</a></h1>
+          <!-- <h3 class="{{isHighlight ? 'highlight' : ''}}">{{ subTitle }}</h3>
+          <h3 [class]="isHighlight ? 'highlight' : ''">{{ subTitle }}</h3> -->
+          <!-- <h3 [class]="{ highlight: isHighlight }">{{ subTitle }}</h3> -->
+          <h3 [class.highlight]="isHighlight">{{ subTitle }}</h3>
         </div>
 
         <div id="social-icons" class="pull-right social-icon">
