@@ -1,3 +1,8 @@
+# TypeScript
+
+- https://www.typescriptlang.org/
+- [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/)
+
 # 常用熱鍵表
 
 - 下載 PDF 檔
