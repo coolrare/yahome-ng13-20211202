@@ -28,12 +28,12 @@
         <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
 
         <div class="pull-left">
-          <h1><a href="http://blog.miniasp.com/">The Will Will Web</a></h1>
-          <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
+          <h1><a [href]="link" [attr.data-abc]="title">{{ title }}</a></h1>
+          <h3>{{ subTitle }}</h3>
         </div>
 
         <div id="social-icons" class="pull-right social-icon">
-          <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
+          <a href="https://www.facebook.com/will.fans" [title]="fbTitle" target="_blank">
             <img src="/assets/images/facebook.png">
           </a>
           <a href="https://twitter.com/Will_Huang" title="@Will_Huang 保哥的推特" target="_blank">
