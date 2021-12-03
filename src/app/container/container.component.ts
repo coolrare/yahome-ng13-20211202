@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Article } from '../article';
 
 @Component({
@@ -6,7 +6,7 @@ import { Article } from '../article';
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css'],
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent implements OnInit, OnChanges, DoCheck {
 
   num = 9;
 
@@ -25,8 +25,17 @@ export class ContainerComponent implements OnInit {
   @Output() keywordSearch = new EventEmitter<string>();
 
   constructor() {}
+  ngDoCheck(): void {
+    console.log('ngDoCheck');
+  }
 
-  ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
+
+  ngOnInit(): void {
+    console.log('ngOnInit');
+  }
 
   searchArticle(keyword: string){
     console.log(keyword);
