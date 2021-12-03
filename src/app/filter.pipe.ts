@@ -6,10 +6,12 @@ import { ArticleService } from './article.service';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService) {
+  }
 
   transform(articles: Article[], keyword: string): Article[] {
+    console.log(this.articleService.authorized);
+
     return this.articleService.searchArticles(articles, keyword);
   }
 }

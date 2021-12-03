@@ -1,3 +1,4 @@
+import { ArticleService } from './../article.service';
 import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Article } from '../article';
 
@@ -5,6 +6,7 @@ import { Article } from '../article';
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css'],
+  providers: [ArticleService]
 })
 export class ContainerComponent implements OnInit, OnChanges, DoCheck {
 
@@ -24,7 +26,8 @@ export class ContainerComponent implements OnInit, OnChanges, DoCheck {
   @Input() articles: Article[] = [];
   @Output() keywordSearch = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private articleService: ArticleService) {}
+
   ngDoCheck(): void {
     console.log('ngDoCheck');
   }

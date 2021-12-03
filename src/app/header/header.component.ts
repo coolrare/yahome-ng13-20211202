@@ -1,9 +1,11 @@
+import { ArticleService } from './../article.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers: [ArticleService]
 })
 export class HeaderComponent implements OnInit {
   title = 'The Will Will Web';
@@ -15,7 +17,7 @@ export class HeaderComponent implements OnInit {
   fontSize = 24;
   displayIcons = true;
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
   }

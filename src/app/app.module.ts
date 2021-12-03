@@ -1,3 +1,4 @@
+import { ArticleService } from './article.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { AsideComponent } from './aside/aside.component';
 import { FilterPipe } from './filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { FakeArticleService } from './fake-article-service';
+
 
 @NgModule({
   declarations: [
@@ -24,9 +28,17 @@ import { FilterPipe } from './filter.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: ArticleService,
+    //   useClass: FakeArticleService
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
