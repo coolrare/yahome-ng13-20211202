@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Article } from '../article';
 
 @Component({
@@ -7,7 +7,7 @@ import { Article } from '../article';
   styleUrls: ['./container.component.css'],
 })
 export class ContainerComponent implements OnInit {
-  keyword = 'test';
+
   num = 9;
 
   // 示範 getter / setter
@@ -22,31 +22,14 @@ export class ContainerComponent implements OnInit {
   // }
 
   @Input() articles: Article[] = [];
+  @Output() keywordSearch = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  search(event: MouseEvent) {
-    this.keyword += '!';
-    console.log(event.ctrlKey);
-  }
-
-  inputKeyup(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      console.log('search');
-    }
-  }
-
-  inputKeyupEnter() {
-    console.log('search (keyup.enter)');
-  }
-
-  keywordInput(event: Event) {
-    this.keyword = (event.target! as HTMLInputElement).value;
-  }
-
-  test(input: any) {
-    console.log(input);
+  searchArticle(keyword: string){
+    console.log(keyword);
+    this.keywordSearch.emit(keyword);
   }
 }

@@ -8,6 +8,7 @@ import { ContainerComponent } from './container/container.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
+import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ArticleComponent } from './article/article.component';
     HeaderComponent,
     ContainerComponent,
     FooterComponent,
-    ArticleComponent
+    ArticleComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
