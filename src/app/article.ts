@@ -4,4 +4,7 @@ export interface Article {
   href: string;
   summary: string;
   date: string;
+  author: string;
+  category: string;
+  'category-link': string;
 }
