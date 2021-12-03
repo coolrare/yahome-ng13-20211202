@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { AsideComponent } from './aside/aside.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AsideComponent } from './aside/aside.component';
     ContainerComponent,
     FooterComponent,
     ArticleComponent,
-    AsideComponent
+    AsideComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

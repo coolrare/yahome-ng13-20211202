@@ -82,9 +82,11 @@ export class AppComponent {
     },
   ];
   originalArticles = this.articles;
+  keyword: string = '';
 
   search(keyword: string) {
-    this.articles = this.originalArticles.filter(article => article.title.includes(keyword));
+    this.keyword = keyword;
+    // this.articles = this.originalArticles.filter(article => article.title.includes(keyword));
 
   }
 }
