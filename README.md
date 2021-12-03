@@ -3,6 +3,12 @@
 - https://www.typescriptlang.org/
 - [TypeScript 新手指南](https://willh.gitbook.io/typescript-tutorial/)
 
+# RxJS 相關資源
+
+- [[書籍] 打通 RxJS 任督二脈：從菜雞前進老鳥必學的關鍵知識](https://www.tenlong.com.tw/products/9789864348039)
+- [[文章] 打通 RxJS 任督二脈](https://fullstackladder.dev/blog/categories/%E6%89%93%E9%80%9A-RxJS-%E4%BB%BB%E7%9D%A3%E4%BA%8C%E8%84%88/)
+- [[文章] 30 天精通 RxJS](https://blog.jerry-hong.com/series/rxjs/)
+
 # 認識 ESModule - JavaScript 的模組化管理機制
 
 - https://pjchender.dev/javascript/js-es-module/
